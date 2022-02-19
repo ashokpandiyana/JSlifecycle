@@ -2,6 +2,8 @@ window.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
   console.log("DOMContentLoaded");
   const DOMContentLoadedItem = document.createElement("div");
+  localStorage.setItem("DOMContentLoaded", "DOMContentLoaded");
+  localStorage.removeItem("beforeunload", "beforeunload");
   DOMContentLoadedItem.textContent = `DOMContentLoaded`;
   console.log(DOMContentLoadedItem);
   root.appendChild(DOMContentLoadedItem);
@@ -10,6 +12,7 @@ window.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("load", () => {
   const root = document.getElementById("root");
   console.log("Load");
+  localStorage.setItem("Load", "Load");
   const DOMContentLoadedItem = document.createElement("div");
   DOMContentLoadedItem.innerHTML = `<p>Load</p>`;
   console.log(DOMContentLoadedItem);
@@ -18,6 +21,7 @@ window.addEventListener("load", () => {
 
 window.addEventListener("beforeunload", () => {
   // handle beforeunload event
+  localStorage.setItem("beforeunload", "beforeunload");
   console.log(
     "Before Unload Can be used for redirect confirmation or analytics information gathering"
   );
